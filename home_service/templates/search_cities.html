@@ -29,7 +29,6 @@
      <span style="color:red"><span style="color:black;font-weight:bold"></span></span></h2><hr>
 
 <div class="container-fluid" style="">
-    {% if not terror %}
     <div class="row">
         <div class="col-md-12">
             <img src="{% static 'images/search1.jpg' %}" style="width:100%;height:auto">
@@ -41,9 +40,11 @@
   <div class="form-group col-md-12">
     <label for="exampleInputPassword1">Select Cities</label>
     <select class="form-control" name="city">
-        {% for i in car %}
-        <option value="{{i.city}}">{{i.city}}</option>
-        {% endfor %}
+        <option value="golpark">Golpark</option>
+        <option value="milanchowk">Milanchowk</option>
+        <option value="Chauraha">Chauraha</option>
+        <option value="driver_tole">Driver Tole</option>
+        <option value="manigram">Manigram</option>
     </select>
   </div>
   </div>
@@ -51,9 +52,10 @@
   <div class="form-group col-md-12">
     <label for="exampleInputPassword1">Select Services</label>
     <select class="form-control" name="cat">
-        {% for i in car1 %}
-        <option value="{{i.category}}">{{i.category}}</option>
-        {% endfor %}
+        <option value="plumber">Plumber</option>
+        <option value="carpenter">Carpenter</option>
+        <option value="electrician">Electrician</option>
+        <option value="mechanic">Mechanic</option>
     </select>
   </div>
   </div>
@@ -64,43 +66,6 @@
 
 
     </div>
-    {% else %}
-    <div class="container-fluid" style="margin-top:1%">
-               <div align="center" class="container">
-                            <div class="container-fluid">
-                               <h4 style="font-weight:bold;font-family : 'Monotype Corsiva' ;margin-top:0%" align="center">
-                                   <span style="color:red">{{count1}}</span> <span style="color:red"><span style="color:black">"{{c1}}"</span></span> found in
-                                   <span style="color:red"><span style="color:black">"{{c}}"</span></span> city
-                               </h4>
-                            </div>
-                   {% for i in order %}
-                            <div class="row" style="margin-bottom:1%;border-radius:8px;padding:12px;width:90%;border:1px solid lightgrey">
-                                <div class="col-md-4">
-                                    <img src="{{i.image.url}}" style="width:60%;border-radius:50%;height:180px">
-                                </div>
-                                <div class="col-md-4" align="left">
-                                    <h4 style="font-weight:bold">{{i.user.first_name}} {{i.user.last_name}}</h4>
-                                    <ul style="color:grey">
-                                        <li>Mobile No. :- {{i.contact}}</li>
-                                        <li>Address :- {{i.address}}</li>
-                                        <li>Work :- {{i.service_name}}</li>
-                                        <li>Experience :- {{i.experience}} year(s)</li>
-                                        <li>City :- {{i.city}}</li>
-                                        <li>Hourly Rate :- {{i.service_charge}} NPR</li>
-                                        <a href="{% url 'booking' i.id %}" ><button class="btn btn-success" style="margin-top:8%;width:60%">Book Now</button></a>
-                                        
-                                    </ul>
-                                </div>
-
-                                <div class="col-md-4">
-                                     <img src="{{i.id_card.url}}" style="width:75%">
-                                    <h4>{{i.id_type}}</h4>
-                                </div>
-                            </div>
-                   {% endfor %}
-               </div>
-</div>
-    {% endif %}
 </div>
 </div>
 

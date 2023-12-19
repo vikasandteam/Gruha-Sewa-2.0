@@ -9,30 +9,6 @@
 }
 </style>
 
-{% if error == "pat" %}
-<script>
-    alert('logged in successfully');
-    window.location=('{% url 'admin_home' %}');
-</script>
-{% endif %}
-
-{% if error == "notmember" %}
-<script>
-    alert('Your information is pending.plz Update Your Profile 1st.then continue this service');
-    window.location=('{% url 'service_home' %}');
-</script>
-{% endif %}
-{% if error == "pat2" %}
-<script>
-    alert('logged in successfully');
-    window.location=('{% url 'admin_home' %}');
-</script>
-{% endif %}
-{% if error == "not" %}
-<script>
-    alert('Username & Password are not Matching');
-</script>
-{% endif %}
 
 
 	<div class="w3l_banner_info" style="height:10px">
@@ -68,7 +44,6 @@
 					<!-- contact form grid -->
 					<div class="contact-top1">
 						<form action="" method="post" class="f-color">
-                            {% csrf_token %}
 							<div class="form-group">
 								<label for="contactusername">Username</label>
 								<input type="text" placeholder="Enter Your Username" class="form-control" id="contactusername" name="uname" required>
