@@ -25,7 +25,7 @@ SECRET_KEY = '(s%3q36yp^uxun5ndp@x$^h*8x*!2my^5tvc_t%2^5opu3-_$y'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['gruhasewa.up.railway.app']
 
 
 # Application definition
